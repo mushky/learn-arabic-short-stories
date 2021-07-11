@@ -30,7 +30,6 @@
   margin: 2px 10px 10px 39px;
   max-width: 100%;
   position: relative;
-  
 }
 
 .dialog-avatar {
@@ -60,6 +59,39 @@
   max-width: 80%;
   padding: 10px 12px;
   color: black;
+}
+
+.continue-button {
+  background-color: #58CC02;
+  color: #fff;
+  border-width: 0 0 4px;
+  padding: 16px 16px;
+  font-size: 15px;
+  line-height: 20px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border-radius: 16px;
+  border-style: solid;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  box-shadow:#58AA02;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 5px;
+  margin-left: 8px;
+  width: 80%;
 }
 
 /* Pop up dialog text */
