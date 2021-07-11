@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="story-title">صباح الخير</div>
+
+    <img class="story-title-image" src="https://stories-cdn.duolingo.com/image/783305780a6dad8e0e4eb34109d948e6a5fc2c35.svg" alt="title-image" height="175px" width="175px">
+      
+    <div class="dialog-container">
+      <div class="dialog-avatar">
+        <img src="https://stories-cdn.duolingo.com/image/7074d00522c0be6307e3e405f503699a99d2121e.svg" alt="avatar-img" height="50px" width="50px"> 
+      </div>
+
+      <div class="dialog-box-corner-arrow"></div>
+
+      <div class="dialog-box">
+        
+        <div class="popup" onclick="goodMorningPopup()">
+          <u class="decoration">صباح الخير</u>
+          <span class="popuptext" id="goodMorningPopup">
+            صباح الخير
+          </span>
+          نور
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="dialog-container">
+      <div class="dialog-avatar">
+        <img src="https://stories-cdn.duolingo.com/image/2b2b64afe0c2af19eed8ac69c36cb8803d0a090e.svg" alt="avatar-img" height="50px" width="50px"> 
+      </div>
+
+      <div class="dialog-box-corner-arrow"></div>
+      
+      <div class="dialog-box">
+
+        <div class="popup" onclick="whereAreMyKeysPopup()">
+          اين <u class="decoration">مفاتيحي</u> ؟
+        <span class="popuptext" id="whereAreMyKeysPopup">
+          My keys
+        </span>
+      </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <script>
+    function goodMorningPopup() {
+      let popup = document.getElementById("goodMorningPopup");
+      popup.classList.toggle("show");
+    }
+
+    function whereAreMyKeysPopup() {
+      let popup = document.getElementById("whereAreMyKeysPopup");
+      popup.classList.toggle("show");
+    }
+  </script>
+  
+</body>
+</html>
