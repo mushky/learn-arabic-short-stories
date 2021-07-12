@@ -106,6 +106,17 @@
 
       </div>
 
+      <!-- Question 1 -->
+      <div class="question-container">
+        <p class="question-text">Maha can't find her keys?</p>
+
+        <input type="radio" id="yes-find-keys" name="find-keys-question" value="yes" onclick="findKeysQuestion()">
+        <label for="yes-keys"> Yes</label><br>
+        <input type="radio" id="no-find-keys" name="find-keys-question" value="no" onclick="findKeysQuestion()">
+        <label for="no-keys"> No</label><br>
+      </div>
+
+
       <!-- 5. -->
       <div class="dialog-container">
         <div class="dialog-avatar">
@@ -126,10 +137,12 @@
         </div>
 
       </div>
+
+
     </div>
 
     <div class="bottom-area">
-
+      <div id="feedback-text"></div>
       <button class="continue-button" id="start" onclick="startDialogue()">
         Start
       </button>
@@ -144,11 +157,12 @@
 
 
   <script>
-    let arrayOfDialogues = document.getElementById("dialog-group").children;
-    let dialogContainer = document.getElementById("dialog-group")
-
+    const arrayOfDialogues = document.getElementById("dialog-group").children;
+    const dialogContainer = document.getElementById("dialog-group")
+    const continueButton = document.getElementById("continue")
     let dialogCounter = 0;
 
+    // Initialize divs on load
     function initialize() {
       dialogContainer.style.display = "none"
 
@@ -156,6 +170,7 @@
       continueButton.style.display = "none"
     }
 
+    // Start dialogue
     function startDialogue() {
       let startButton = document.getElementById("start");
       startButton.style.display = "none"
@@ -169,23 +184,52 @@
       }
     }
 
+    // Move to the next dialog or question
     function nextItem() {
       if (dialogCounter <= arrayOfDialogues.length - 2) {
-
         dialogCounter += 1;
         arrayOfDialogues[dialogCounter].style.visibility = "visible"
       } else {
-
-        let continueButton = document.getElementById("continue");
         continueButton.innerHTML = "Next Story!"
         continueButton.style.backgroundColor = "red"
       }
-
+      if (dialogCounter == 4) {
+        continueButton.disabled = true
+      }
+      console.log(dialogCounter)
     }
 
-    initialize();
+    // Functions related to questions.
+    function awesomeFeedback() {
+      let feedback = document.getElementById("feedback-text")
 
+      feedback.innerHTML = "AWESOME!"
+      continueButton.disabled = false
+      setTimeout(() => {
+        feedback.innerHTML = ""
+      },2000)
+    }
 
+    function ouchFeedback() {
+      let feedback = document.getElementById("feedback-text")
+      let continueButton = document.getElementById("continue")
+
+      feedback.innerHTML = "OUCH try again!"
+      continueButton.disabled = true
+      setTimeout(() => {
+        feedback.innerHTML = ""
+      },2000)
+    }
+
+    function findKeysQuestion() {
+      if (document.getElementById("yes-find-keys").checked) {
+        awesomeFeedback();
+      } else if (document.getElementById("no-find-keys").checked) {
+        ouchFeedback();
+      }
+    }
+
+    // Pop up translations (Right now every translation requires its own function. Luckily they are easy to write.)
     function goodMorningPopup() {
       let popup = document.getElementById("goodMorningPopup");
       popup.classList.toggle("show");
@@ -205,6 +249,9 @@
       let popup = document.getElementById("iNeedThemForWorkPopup");
       popup.classList.toggle("show");
     }
+
+    // Call initialize
+    initialize();
   </script>
   
 </body>
