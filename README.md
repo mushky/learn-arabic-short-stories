@@ -3,8 +3,8 @@
 ### Todos
 
 1. Complete minimal prototype
- - Complete Story
+ - Complete Story [DONE]
  - Intro Screen for story
- - Button that brings next sentence in dialog
+ - Button that brings next sentence in dialog [DONE]
  - Questions about what is happening in the story
  - Completion 

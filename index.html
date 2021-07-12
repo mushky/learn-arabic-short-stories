@@ -10,10 +10,15 @@
 <body>
   
   <div class="container">
-    <div class="story-title">صباح الخير</div>
+    <div class="story-title">Where are my keys?</div>
 
     <img class="story-title-image" src="https://stories-cdn.duolingo.com/image/783305780a6dad8e0e4eb34109d948e6a5fc2c35.svg" alt="title-image" height="175px" width="175px">
-    
+
+    <div class="intro-text">
+      <p>Learn Arabic through short stories.</p>
+      <p>Click on words you don't know.</p>
+    </div>
+
     <div id="dialog-group">
 
       <!-- 1. -->
@@ -121,29 +126,50 @@
         </div>
 
       </div>
-
-      
     </div>
 
+    <div class="bottom-area">
 
-    <button class="continue-button" id="continue" onclick="nextItem()">
-      Continue
-    </button>
+      <button class="continue-button" id="start" onclick="startDialogue()">
+        Start
+      </button>
+  
+      <button class="continue-button" id="continue" onclick="nextItem()">
+        Continue
+      </button>
+
+    </div>
+
   </div>
 
 
   <script>
     let arrayOfDialogues = document.getElementById("dialog-group").children;
+    let dialogContainer = document.getElementById("dialog-group")
+
     let dialogCounter = 0;
 
-    function initializeDialogue() {
+    function initialize() {
+      dialogContainer.style.display = "none"
+
+      let continueButton = document.getElementById("continue");
+      continueButton.style.display = "none"
+    }
+
+    function startDialogue() {
+      let startButton = document.getElementById("start");
+      startButton.style.display = "none"
+      let continueButton = document.getElementById("continue");
+      
+      continueButton.style.display = "block"
+      dialogContainer.style.display = "block"
+
       for (let i = 1; i < arrayOfDialogues.length; i++) {
         arrayOfDialogues[i].style.visibility = "hidden";
       }
     }
 
     function nextItem() {
-      console.log("dialogCounter: " + dialogCounter + " array: " + String(arrayOfDialogues.length - 2))
       if (dialogCounter <= arrayOfDialogues.length - 2) {
 
         dialogCounter += 1;
@@ -151,13 +177,13 @@
       } else {
 
         let continueButton = document.getElementById("continue");
-        continueButton.innerHTML = "GREAT JOB!"
+        continueButton.innerHTML = "Next Story!"
         continueButton.style.backgroundColor = "red"
       }
 
     }
 
-    initializeDialogue();
+    initialize();
 
 
     function goodMorningPopup() {
