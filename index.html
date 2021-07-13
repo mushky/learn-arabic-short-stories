@@ -5,18 +5,73 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+
   <title>Arabic Short Stories</title>
 </head>
 <body>
   
-  <div class="container">
-    <div class="story-title">Where are my keys?</div>
+  <div class="container" id="dictionary-container">
+    <div class="story-title">Dictionary</div>
+    <img class="story-title-image" src="CarKeysTitle.png" alt="title-image">
 
-    <img class="story-title-image" src="https://stories-cdn.duolingo.com/image/783305780a6dad8e0e4eb34109d948e6a5fc2c35.svg" alt="title-image" height="175px" width="175px">
+    <p class="intro-text"><span id="dictionary" onclick="dictionaryToggle()"><u class="decoration">Back to the Story </u></span>
+    
+    <div class="dictionary-pair">
+      <div>صباح الخير</div>
+      <div>Good Morning</div>
+      <br>
+
+      <div>مها</div>
+      <div>Maha (a name)</div>
+      <br>
+
+      <div>مفاتيحي</div>
+      <div>My keys</div> 
+      <br>
+
+      <div>اين</div>
+      <div>Where</div>
+      <br>
+
+      <div>للذهاب إلى</div>
+      <div>To go to</div>
+      <br>
+
+      <div>أحتاجهم</div>
+      <div>I need them</div>
+      <br>
+
+      <div>نعم</div>
+      <div>Yes</div>
+      <br>
+
+      <div>العمل</div>
+      <div>Work</div>
+      <br>
+
+      <div>أحتاج</div>
+      <div>I need</div>
+      <br>
+
+      <div>سيارتي</div>
+      <div>My car</div>
+      <br>
+
+      <div>مفاتيح</div>
+      <div>Keys</div>
+    </div>
+
+  </div>
+
+  <div class="container" id="story-container">
+    <div class="story-title">Where are my Car Keys?</div>
+
+    <img class="story-title-image" src="CarKeysTitle.png" alt="title-image">
 
     <div class="intro-text">
       <p>Learn Arabic through short stories.</p>
       <p>Click on words you don't know.</p>
+      <p>Still don't know? <span id="dictionary" onclick="dictionaryToggle()"><u class="decoration">Try the Dictionary</u></span>
     </div>
 
     <div id="dialog-group">
@@ -24,7 +79,7 @@
       <!-- 1. -->
       <div class="dialog-container">
         <div class="dialog-avatar">
-          <img src="https://stories-cdn.duolingo.com/image/7074d00522c0be6307e3e405f503699a99d2121e.svg" alt="avatar-img" height="50px" width="50px"> 
+          <img src="MaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
         </div>
 
         <div class="dialog-box-corner-arrow"></div>
@@ -45,7 +100,7 @@
       <!-- 2. -->
       <div class="dialog-container">
         <div class="dialog-avatar">
-          <img src="https://stories-cdn.duolingo.com/image/2b2b64afe0c2af19eed8ac69c36cb8803d0a090e.svg" alt="avatar-img" height="50px" width="50px"> 
+          <img src="FemaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
         </div>
 
         <div class="dialog-box-corner-arrow"></div>
@@ -66,7 +121,9 @@
       <!-- 3.  -->
       <div class="dialog-container">
         <div class="dialog-avatar">
-          <img src="https://stories-cdn.duolingo.com/image/7074d00522c0be6307e3e405f503699a99d2121e.svg" alt="avatar-img" height="50px" width="50px"> 
+          <!-- <img src="https://stories-cdn.duolingo.com/image/7074d00522c0be6307e3e405f503699a99d2121e.svg" alt="avatar-img" height="50px" width="50px">  -->
+          <img src="MaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+
         </div>
 
         <div class="dialog-box-corner-arrow"></div>
@@ -74,7 +131,7 @@
         <div class="dialog-box">
 
           <div class="popup" onclick="yourKeysPopup()">
-            <u class="decoration">مفاتيحك؟</u> ؟
+            <u class="decoration">مفاتيحك</u> ؟
           <span class="popuptext" id="yourKeysPopup">
             Your keys
           </span>
@@ -87,7 +144,8 @@
       <!-- 4. -->
       <div class="dialog-container">
         <div class="dialog-avatar">
-          <img src="https://stories-cdn.duolingo.com/image/2b2b64afe0c2af19eed8ac69c36cb8803d0a090e.svg" alt="avatar-img" height="50px" width="50px"> 
+          <img src="FemaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+          <!-- <img src="https://stories-cdn.duolingo.com/image/2b2b64afe0c2af19eed8ac69c36cb8803d0a090e.svg" alt="avatar-img" height="50px" width="50px">  -->
         </div>
 
         <div class="dialog-box-corner-arrow"></div>
@@ -120,17 +178,17 @@
       <!-- 5. -->
       <div class="dialog-container">
         <div class="dialog-avatar">
-          <img src="https://stories-cdn.duolingo.com/image/2b2b64afe0c2af19eed8ac69c36cb8803d0a090e.svg" alt="avatar-img" height="50px" width="50px"> 
+          <img src="FemaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
         </div>
 
         <div class="dialog-box-corner-arrow"></div>
         
         <div class="dialog-box">
 
-          <div class="popup" onclick="whereAreMyKeysPopup()">
-            أحتاج ، أحتاج مفاتيح سيارتي!
-          <span class="popuptext" id="whereAreMyKeysPopup">
-            I need, I need my car keys!
+          <div class="popup" onclick="iNeedMyCarKeys()">
+            أحتاج <u class="decoration">  مفاتيح سيارتي</u>
+          <span class="popuptext" id="iNeedMyCarKeys">
+            Car keys
           </span>
         </div>
 
@@ -155,11 +213,14 @@
 
   </div>
 
-
-  <script>
+  <!-- <script>
+    const dictionaryContainer = document.getElementById("dictionary-container")
+    const container = document.getElementById("story-container")
     const arrayOfDialogues = document.getElementById("dialog-group").children;
     const dialogContainer = document.getElementById("dialog-group")
     const continueButton = document.getElementById("continue")
+    dictionaryContainer.style.display = "none"
+
     let dialogCounter = 0;
 
     // Initialize divs on load
@@ -168,6 +229,7 @@
 
       let continueButton = document.getElementById("continue");
       continueButton.style.display = "none"
+
     }
 
     // Start dialogue
@@ -197,6 +259,18 @@
         continueButton.disabled = true
       }
       console.log(dialogCounter)
+    }
+
+
+    // Dictionary Toggle
+    function dictionaryToggle(){
+      if (dictionaryContainer.style.display == "none") {
+        dictionaryContainer.style.display = "block"
+        container.style.display = "none"
+      } else {
+        dictionaryContainer.style.display = "none"
+        container.style.display = "block"
+      }
     }
 
     // Functions related to questions.
@@ -250,9 +324,15 @@
       popup.classList.toggle("show");
     }
 
+    function iNeedMyCarKeys() {
+      let popup = document.getElementById("iNeedMyCarKeys");
+      popup.classList.toggle("show");
+    }
+
     // Call initialize
     initialize();
-  </script>
-  
+  </script> -->
+  <script src="script.js"></script>
+
 </body>
 </html>
