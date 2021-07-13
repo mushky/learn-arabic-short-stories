@@ -8,7 +8,10 @@
  - Button that brings next sentence in dialog [DONE]
  - Questions about what is happening in the story [DONE]
  - Dictionary Page [DONE]
- - Create Pixel Art for Intro
- - Create Pixel Art for Male Speaker
- - Create Pixel Art for Female Speaker
+ - Create Pixel Art for Intro 
+ - Create Pixel Art for Where are my car keys title [DONE]
+ - Create Pixel Art for Male Speaker [DONE]
+ - Create Pixel Art for Female Speaker [DONE]
+ - Web Browser Friendly
+ - Mobile Friendly [DONE]
  - Completion 

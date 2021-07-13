@@ -36,7 +36,14 @@ p {
 
 .intro-text {
   text-align: center;
+}
 
+.intro-arabic-text {
+  font-size: 32px;
+}
+
+.intro-sub-text {
+  font-size: 24px;
 }
 
 .dialog-container {
