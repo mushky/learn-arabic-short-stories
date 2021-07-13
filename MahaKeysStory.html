@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <title>Arabic Short Stories</title>
+</head>
+<body>
+  
+  <div class="container" id="dictionary-container">
+    <div class="story-title">Dictionary</div>
+    <img class="story-title-image" src="img/CarKeysTitle.png" alt="title-image">
+
+    <p class="intro-text"><span id="dictionary" onclick="dictionaryToggle()"><u class="decoration">Back to the Story </u></span>
+    
+    <div class="dictionary-pair">
+      <div>صباح الخير</div>
+      <div>Good Morning</div>
+      <br>
+
+      <div>مها</div>
+      <div>Maha (a name)</div>
+      <br>
+
+      <div>مفاتيحي</div>
+      <div>My keys</div> 
+      <br>
+
+      <div>اين</div>
+      <div>Where</div>
+      <br>
+
+      <div>للذهاب إلى</div>
+      <div>To go to</div>
+      <br>
+
+      <div>أحتاجهم</div>
+      <div>I need them</div>
+      <br>
+
+      <div>نعم</div>
+      <div>Yes</div>
+      <br>
+
+      <div>العمل</div>
+      <div>Work</div>
+      <br>
+
+      <div>أحتاج</div>
+      <div>I need</div>
+      <br>
+
+      <div>سيارتي</div>
+      <div>My car</div>
+      <br>
+
+      <div>مفاتيح</div>
+      <div>Keys</div>
+    </div>
+
+  </div>
+
+  <div class="container" id="story-container">
+    <div class="story-title">Where are Maha's Car Keys?</div>
+
+    <img class="story-title-image" src="img/CarKeysTitle.png" alt="title-image">
+
+    <div class="intro-text">
+      <p>Click on words you don't know.</p>
+      <p>Stuck? <span id="dictionary" onclick="dictionaryToggle()"><u class="decoration">Try the Dictionary</u></span>
+    </div>
+
+    <div id="dialog-group">
+
+      <!-- 1. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/MaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+
+        <div class="dialog-box-corner-arrow"></div>
+
+        <div class="dialog-box">
+          
+          <div class="popup" onclick="goodMorningPopup()">
+            <u class="decoration">صباح الخير</u>
+            <span class="popuptext" id="goodMorningPopup">
+              Good morning
+            </span>
+            مها
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 2. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/FemaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+
+        <div class="dialog-box-corner-arrow"></div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="whereAreMyKeysPopup()">
+            اين <u class="decoration">مفاتيحي</u> ؟
+          <span class="popuptext" id="whereAreMyKeysPopup">
+            My keys
+          </span>
+        </div>
+
+        </div>
+
+      </div>
+      
+      <!-- 3.  -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <!-- <img src="https://stories-cdn.duolingo.com/image/7074d00522c0be6307e3e405f503699a99d2121e.svg" alt="avatar-img" height="50px" width="50px">  -->
+          <img src="img/MaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+
+        </div>
+
+        <div class="dialog-box-corner-arrow"></div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="yourKeysPopup()">
+            <u class="decoration">مفاتيحك</u> ؟
+          <span class="popuptext" id="yourKeysPopup">
+            Your keys
+          </span>
+        </div>
+
+        </div>
+
+      </div>
+
+      <!-- 4. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/FemaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+          <!-- <img src="https://stories-cdn.duolingo.com/image/2b2b64afe0c2af19eed8ac69c36cb8803d0a090e.svg" alt="avatar-img" height="50px" width="50px">  -->
+        </div>
+
+        <div class="dialog-box-corner-arrow"></div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="iNeedThemForWorkPopup()">
+          نعم، <u class="decoration">أحتاجهم</u> للذهاب إلى العمل
+
+          <span class="popuptext" id="iNeedThemForWorkPopup">
+            I need them
+          </span>
+        </div>
+
+        </div>
+
+      </div>
+
+      <!-- Question 1 -->
+      <div class="question-container">
+        <p class="question-text">Maha can't find her keys?</p>
+
+        <input type="radio" id="yes-find-keys" name="find-keys-question" value="yes" onclick="findKeysQuestion()">
+        <label for="yes-keys"> Yes</label><br>
+        <input type="radio" id="no-find-keys" name="find-keys-question" value="no" onclick="findKeysQuestion()">
+        <label for="no-keys"> No</label><br>
+      </div>
+
+
+      <!-- 5. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/FemaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+
+        <div class="dialog-box-corner-arrow"></div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="iNeedMyCarKeys()">
+            أحتاج <u class="decoration">  مفاتيح سيارتي</u>
+          <span class="popuptext" id="iNeedMyCarKeys">
+            Car keys
+          </span>
+        </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="bottom-area">
+      <div id="feedback-text"></div>
+      <button class="continue-button" id="start" onclick="startDialogue()">
+        Start
+      </button>
+  
+      <button class="continue-button" id="continue" onclick="nextItem()">
+        Continue
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
