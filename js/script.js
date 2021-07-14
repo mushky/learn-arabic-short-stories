@@ -34,15 +34,24 @@ function startDialogue() {
 function nextItem() {
   if (dialogCounter <= arrayOfDialogues.length - 2) {
     dialogCounter += 1;
-    arrayOfDialogues[dialogCounter].style.visibility = "visible"
+
+    let nextDialog = arrayOfDialogues[dialogCounter]
+    nextDialog.style.visibility = "visible"
+
+    // Scroll down to latest dialog
+    let dialogPos = nextDialog.getBoundingClientRect()
+    if (dialogPos.top > 500) {
+      window.scrollTo(dialogPos.left, dialogPos.top - 100)
+    }
+
   } else {
     continueButton.innerHTML = "Next Story!"
     continueButton.style.backgroundColor = "red"
   }
+  // 4 is where the first question is. TODO: come up with a better system for this.
   if (dialogCounter == 4) {
     continueButton.disabled = true
   }
-  console.log(dialogCounter)
 }
 
 
