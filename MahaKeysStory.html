@@ -64,12 +64,16 @@
   </div>
 
   <div class="container" id="story-container">
-    <div class="story-title">Where are Maha's Car Keys?</div>
+      <meter id="progress-bar"
+        min="0" max="100"
+        value="0"
+      >
+    </meter>
 
     <img class="story-title-image" src="img/CarKeysTitle.png" alt="title-image">
+    <div class="story-title">Where are Maha's Car Keys?</div>
 
     <div class="intro-text">
-      <p>Click on words you don't know.</p>
       <p>Stuck? <span id="dictionary" onclick="dictionaryToggle()"><u class="decoration">Try the Dictionary</u></span>
     </div>
 
@@ -183,19 +187,21 @@
 
       </div>
 
-      <br><br><br><br>
-
     </div>
 
-    <div class="bottom-area">
+    <div>
+      <br><br><br><br>
+    </div>
+
+    <div class="bottom-area" id="bottom-area">
       <div id="feedback-text"></div>
       <button class="continue-button" id="start" onclick="startDialogue()">
         Start
       </button>
-  
       <button class="continue-button" id="continue" onclick="nextItem()">
         Continue
       </button>
+      <br>
 
     </div>
 

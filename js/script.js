@@ -1,8 +1,13 @@
-const dictionaryContainer = document.getElementById("dictionary-container")
+/* Code for Maha Keys Story Lesson */
+
 const container = document.getElementById("story-container")
+const dictionaryContainer = document.getElementById("dictionary-container")
 const arrayOfDialogues = document.getElementById("dialog-group").children;
 const dialogContainer = document.getElementById("dialog-group")
 const continueButton = document.getElementById("continue")
+const bottomArea = document.getElementById("bottom-area")
+const progressBar = document.getElementById("progress-bar")
+
 dictionaryContainer.style.display = "none"
 
 let dialogCounter = 0;
@@ -13,15 +18,14 @@ function initialize() {
 
   let continueButton = document.getElementById("continue");
   continueButton.style.display = "none"
-
 }
 
 // Start dialogue
 function startDialogue() {
   let startButton = document.getElementById("start");
   startButton.style.display = "none"
-  let continueButton = document.getElementById("continue");
   
+  let continueButton = document.getElementById("continue");
   continueButton.style.display = "block"
   dialogContainer.style.display = "block"
 
@@ -35,9 +39,11 @@ function nextItem() {
   if (dialogCounter <= arrayOfDialogues.length - 2) {
     dialogCounter += 1;
 
+    incrementProgressBar()
+
     let nextDialog = arrayOfDialogues[dialogCounter]
     nextDialog.style.visibility = "visible"
-
+    
     // Scroll down to latest dialog
     let dialogPos = nextDialog.getBoundingClientRect()
     if (dialogPos.top > 500) {
@@ -54,7 +60,6 @@ function nextItem() {
   }
 }
 
-
 // Dictionary Toggle
 function dictionaryToggle(){
   if (dictionaryContainer.style.display == "none") {
@@ -70,21 +75,26 @@ function dictionaryToggle(){
 function awesomeFeedback() {
   let feedback = document.getElementById("feedback-text")
 
-  feedback.innerHTML = "AWESOME!"
+  feedback.innerHTML = "! ممتاز"
   continueButton.disabled = false
+  continueButton.style.display = "none"
+
   setTimeout(() => {
     feedback.innerHTML = ""
+    continueButton.style.display = "block"
   },2000)
 }
 
 function ouchFeedback() {
   let feedback = document.getElementById("feedback-text")
-  let continueButton = document.getElementById("continue")
 
-  feedback.innerHTML = "OUCH try again!"
+  feedback.innerHTML = "! خاطئ"
   continueButton.disabled = true
+  continueButton.style.display = "none"
+  
   setTimeout(() => {
     feedback.innerHTML = ""
+    continueButton.style.display = "block"
   },2000)
 }
 
@@ -93,6 +103,15 @@ function findKeysQuestion() {
     awesomeFeedback();
   } else if (document.getElementById("no-find-keys").checked) {
     ouchFeedback();
+  }
+}
+
+function incrementProgressBar() {
+  let amountToIncrement = 100 / arrayOfDialogues.length + 1;
+  progressBar.value += amountToIncrement
+
+  if (dialogCounter == arrayOfDialogues.length - 1) {
+    progressBar.value = 100
   }
 }
 
