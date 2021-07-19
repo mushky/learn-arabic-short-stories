@@ -7,6 +7,7 @@ const dialogContainer = document.getElementById("dialog-group")
 const continueButton = document.getElementById("continue")
 const bottomArea = document.getElementById("bottom-area")
 const progressBar = document.getElementById("progress-bar")
+const titleImage = document.getElementById("story-title-image")
 
 dictionaryContainer.style.display = "none"
 
@@ -32,6 +33,9 @@ function startDialogue() {
   for (let i = 1; i < arrayOfDialogues.length; i++) {
     arrayOfDialogues[i].style.visibility = "hidden";
   }
+
+  titleImage.style.width = "25%"
+  titleImage.style.height = "25%"
 }
 
 // Move to the next dialog or question
@@ -46,16 +50,37 @@ function nextItem() {
     
     // Scroll down to latest dialog
     let dialogPos = nextDialog.getBoundingClientRect()
-    if (dialogPos.top > 500) {
-      window.scrollTo(dialogPos.left, dialogPos.top - 100)
+
+    if (dialogPos.bottom > 600) {
+      window.scrollTo(0, dialogPos.bottom - 60)
     }
 
   } else {
-    continueButton.innerHTML = "Next Story!"
+    continueButton.innerHTML = "Finished!"
     continueButton.style.backgroundColor = "red"
   }
   // 4 is where the first question is. TODO: come up with a better system for this.
   if (dialogCounter == 4) {
+    continueButton.disabled = true
+  }
+
+  // 7 is where the first question is. TODO: come up with a better system for this.
+  if (dialogCounter == 7) {
+    continueButton.disabled = true
+  }
+
+  // 9 is where the second question is. TODO: come up with a better system for this.
+  if (dialogCounter == 9) {
+    continueButton.disabled = true
+  }
+
+  // 14 is where the third question is. TODO: come up with a better system for this.
+  if (dialogCounter == 14) {
+    continueButton.disabled = true
+  }
+
+  // 20 is where the forth question is. TODO: come up with a better system for this.
+  if (dialogCounter == 20) {
     continueButton.disabled = true
   }
 }
@@ -79,10 +104,13 @@ function awesomeFeedback() {
   continueButton.disabled = false
   continueButton.style.display = "none"
 
+  bottomArea.style.backgroundColor = "#58CC02";
+
   setTimeout(() => {
     feedback.innerHTML = ""
     continueButton.style.display = "block"
-  },2000)
+    bottomArea.style.backgroundColor = "#fff";
+  },900)
 }
 
 function ouchFeedback() {
@@ -91,12 +119,26 @@ function ouchFeedback() {
   feedback.innerHTML = "! خاطئ"
   continueButton.disabled = true
   continueButton.style.display = "none"
-  
+
+  bottomArea.style.backgroundColor = "#e74c3c"
+
   setTimeout(() => {
     feedback.innerHTML = ""
     continueButton.style.display = "block"
-  },2000)
+    bottomArea.style.backgroundColor = "#fff";
+  },900)
 }
+
+function incrementProgressBar() {
+  let amountToIncrement = 100 / arrayOfDialogues.length + 1;
+  progressBar.value += amountToIncrement
+
+  if (dialogCounter == arrayOfDialogues.length - 1) {
+    progressBar.value = 100
+  }
+}
+
+// Questions
 
 function findKeysQuestion() {
   if (document.getElementById("yes-find-keys").checked) {
@@ -106,12 +148,43 @@ function findKeysQuestion() {
   }
 }
 
-function incrementProgressBar() {
-  let amountToIncrement = 100 / arrayOfDialogues.length + 1;
-  progressBar.value += amountToIncrement
+function whereAreMahasKeysQuestion() {
+  if (document.getElementById("on-the-table").checked) {
+    awesomeFeedback();
+  } else if (document.getElementById("in-her-car").checked) {
+    ouchFeedback();
+  } else if (document.getElementById("on-her-bed").checked) {
+    ouchFeedback();
+  }
+}
 
-  if (dialogCounter == arrayOfDialogues.length - 1) {
-    progressBar.value = 100
+function whichWordMeansTired() {
+  if (document.getElementById("tired").checked) {
+    awesomeFeedback();
+  } else if (document.getElementById("car").checked) {
+    ouchFeedback();
+  } else if (document.getElementById("donkey").checked) {
+    ouchFeedback();
+  }
+}
+
+function whatIsMahaLookingFor() {
+  if (document.getElementById("looking-for-sugar").checked) {
+    awesomeFeedback();
+  } else if (document.getElementById("complaining-about-something").checked) {
+    ouchFeedback();
+  } else if (document.getElementById("looking-for-coffee").checked) {
+    ouchFeedback();
+  }
+}
+
+function mahaWasSoTiredSheDidWhatQuestion() {
+  if (document.getElementById("put-salt-in-her-coffee").checked) {
+    awesomeFeedback();
+  } else if (document.getElementById("fell-asleep").checked) {
+    ouchFeedback();
+  } else if (document.getElementById("dropped-her-keys-in-the-coffee").checked) {
+    ouchFeedback();
   }
 }
 
@@ -139,6 +212,76 @@ function iNeedThemForWorkPopup() {
 function iNeedMyCarKeys() {
   let popup = document.getElementById("iNeedMyCarKeys");
   popup.classList.toggle("show");
+}
+
+function youLeftYourKeysOnTheTable() {
+  let popup = document.getElementById("youLeftYourKeysOnTheTable")
+  popup.classList.toggle("show");
+}
+
+function iAmTiredAndWorkTooMuch() {
+  let popup = document.getElementById("iAmTiredAndWorkTooMuch")
+  popup.classList.toggle("show")
+}
+
+function coffee() {
+  let popup = document.getElementById("coffee")
+  popup.classList.toggle("show")
+}
+
+function doYouWant() {
+  let popup = document.getElementById("doYouWant")
+  popup.classList.toggle("show")
+}
+
+function please() {
+  let popup = document.getElementById("please")
+  popup.classList.toggle("show")
+}
+
+function iPut() {
+  let popup = document.getElementById("iPut")
+  popup.classList.toggle("show")
+}
+
+function doYouHave() {
+  let popup = document.getElementById("doYouHave")
+  popup.classList.toggle("show")
+}
+
+function sheDrinks() {
+  let popup = document.getElementById("sheDrinks")
+  popup.classList.toggle("show")
+}
+
+function ohNo() {
+  let popup = document.getElementById("ohNo")
+  popup.classList.toggle("show")
+}
+
+function happened() {
+  let popup = document.getElementById("happened")
+  popup.classList.toggle("show")
+}
+
+function salt() {
+  let popup = document.getElementById("salt")
+  popup.classList.toggle("show")
+}
+
+function very() {
+  let popup = document.getElementById("very")
+  popup.classList.toggle("show")
+}
+
+function sleep() {
+  let popup = document.getElementById("sleep")
+  popup.classList.toggle("show")
+}
+
+function youShould() {
+  let popup = document.getElementById("youShould")
+  popup.classList.toggle("show")
 }
 
 // Call initialize

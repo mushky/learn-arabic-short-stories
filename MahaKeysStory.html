@@ -59,6 +59,18 @@
 
       <div>مفاتيح</div>
       <div>Keys</div>
+      <br>
+
+      <div>على</div>
+      <div>On (not to be confused with the name Ali)</div>
+      <br>
+
+      <div>هنا</div>
+      <div>Here</div>
+      <br>
+
+      <div>الطاولة</div>
+      <div>Table</div>
     </div>
 
   </div>
@@ -70,7 +82,7 @@
       >
     </meter>
 
-    <img class="story-title-image" src="img/CarKeysTitle.png" alt="title-image">
+    <img class="story-title-image" id="story-title-image" src="img/CarKeysTitle.png" alt="title-image">
     <div class="story-title">Where are Maha's Car Keys?</div>
 
     <div class="intro-text">
@@ -178,16 +190,303 @@
 
           <div class="popup" onclick="iNeedMyCarKeys()">
             أحتاج <u class="decoration">  مفاتيح سيارتي</u>
-          <span class="popuptext" id="iNeedMyCarKeys">
-            Car keys
-          </span>
+            <span class="popuptext" id="iNeedMyCarKeys">
+              My Car keys
+            </span>
+          </div>
+
         </div>
+
+      </div>
+
+
+      <!-- 6. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/MaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="youLeftYourKeysOnTheTable()">
+            مها ، مفاتيحك هنا على <u class="decoration">الطاولة</u>
+            <span class="popuptext" id="youLeftYourKeysOnTheTable">
+              Table
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-container">
+        <p class="question-text">Where were Maha's keys?</p>
+
+        <input type="radio" id="on-the-table" name="find-keys-question" value="Table" onclick="whereAreMahasKeysQuestion()">
+        <label for="on-the-table"> On the table</label><br>
+        <input type="radio" id="in-her-car" name="find-keys-question" value="Car" onclick="whereAreMahasKeysQuestion()">
+        <label for="in-her-car"> In her car</label><br>
+        <input type="radio" id="on-her-bed" name="find-keys-question" value="Bed" onclick="whereAreMahasKeysQuestion()">
+        <label for="on-her-bed"> On her bed</label><br>
+      </div>
+
+
+      <!-- 7. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/FemaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="iAmTiredAndWorkTooMuch()">
+            آسف أنا <u class="decoration">تعبت</u> وأنا أعمل كثيرا
+            <span class="popuptext" id="iAmTiredAndWorkTooMuch">
+            Tired
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question-container">
+        <p class="question-text">Which word means tired?</p>
+
+        <input type="radio" id="tired" name="which-word-means-tired" value="تعبت" onclick="whichWordMeansTired()">
+        <label for="tired"> تعبت</label><br>
+        <input type="radio" id="car" name="which-word-means-tired" value="سيارة" onclick="whichWordMeansTired()">
+        <label for="car"> سيارة</label><br>
+        <input type="radio" id="donkey" name="which-word-means-tired" value="حمار" onclick="whichWordMeansTired()">
+        <label for="donkey"> حمار</label><br>
+      </div>
+
+
+      <!-- 8. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/MaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="coffee()" >
+            هل <u class="decoration" onclick="doYouWant()">تريد </u> <u class="decoration">قهوة ؟ </u>
+            <span class="popuptext" id="coffee">
+              Coffee
+            </span>
+            <span class="popuptext" id="doYouWant">
+              Do you want?
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 9. -->
+
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/FemaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="please()">
+            نعم <u class="decoration">من فضلك</u> 
+            <span class="popuptext" id="please">
+              Please
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 10. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/MaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="iPut()" >
+            <u class="decoration">أضع</u> قهوتك على الطاولة
+            <span class="popuptext" id="iPut">
+              I put
+            </span>
+          </div>
+
+        </div>
+
+      </div>    
+      
+      <!-- 11. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/FemaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="doYouHave()">
+            هل <u class="decoration">عندك</u> سكر
+            <span class="popuptext" id="doYouHave">
+              Do you have?
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question-container">
+        <p class="question-text">What is Maha doing?</p>
+
+        <input type="radio" id="looking-for-sugar" name="which-word-means-tired" value="looking-for-sugar" onclick="whatIsMahaLookingFor()">
+        <label for="tired"> Looking for sugar</label><br>
+        <input type="radio" id="complaining-about-something" name="which-word-means-tired" value="complaining-about-something" onclick="whatIsMahaLookingFor()">
+        <label for="car"> Complaining about something</label><br>
+        <input type="radio" id="looking-for-coffee" name="which-word-means-tired" value="looking-for-coffee" onclick="whatIsMahaLookingFor()">
+        <label for="donkey"> Looking for coffee</label><br>
+      </div>
+
+      <!-- 11. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/coffee.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="sheDrinks()">
+            مها <u class="decoration">تشرب</u>  قهوتها  
+            <span class="popuptext" id="sheDrinks">
+              She drinks
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 12. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/FemaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="ohNo()">
+            أوه لا!
+            <span class="popuptext" id="ohNo">
+            Oh no!
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 13. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/MaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="happened()">
+            ماذا <u class="decoration"> حدث ؟</u> 
+            <span class="popuptext" id="happened">
+            Happened
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+      
+      <!-- 14. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/FemaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="salt()">
+            هذا ليس سكر. هذا <u class="decoration">ملح </u>
+            <span class="popuptext" id="salt">
+            Salt
+            </span>
+          </div>
+
+        </div>
+
+      </div>    
+      
+      <!-- 15. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/MaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="very()">
+            مها ، أنت متعبة <u class="decoration">جدًا</u> 
+            <span class="popuptext" id="very">
+            Very
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question-container">
+        <p class="question-text">Maha was so tired she did what?</p>
+
+        <input type="radio" id="put-salt-in-her-coffee" name="maha-was-so-tired-she-did-what" value="put-salt-in-her-coffee" onclick="mahaWasSoTiredSheDidWhatQuestion()">
+        <label for="tired"> Put salt in her coffee</label><br>
+        <input type="radio" id="fell-asleep" name="maha-was-so-tired-she-did-what" value="fell-asleep" onclick="mahaWasSoTiredSheDidWhatQuestion()">
+        <label for="car"> Fell asleep</label><br>
+        <input type="radio" id="dropped-her-keys-in-the-coffee" name="maha-was-so-tired-she-did-what" value="dropped-her-keys-in-the-coffee" onclick="mahaWasSoTiredSheDidWhatQuestion()">
+        <label for="donkey"> Dropped her keys in her coffee</label><br>
+      </div>
+
+      <!-- 15. -->
+      <div class="dialog-container">
+        <div class="dialog-avatar">
+          <img src="img/MaleSpeaker.png" alt="avatar-img" height="50px" width="50px"> 
+        </div>
+        
+        <div class="dialog-box">
+
+          <div class="popup" onclick="sleep()">
+            مها <u class="decoration" onclick="youShould()">يجب أن </u>  <u class="decoration">  تنام </u> 
+            <span class="popuptext" id="sleep">
+            Sleep
+            </span>
+            <span class="popuptext" id="youShould">
+            You should
+            </span>
+          </div>
 
         </div>
 
       </div>
 
     </div>
+
 
     <div>
       <br><br><br><br>
@@ -204,7 +503,6 @@
       <br>
 
     </div>
-
   </div>
 
   <script src="js/script.js"></script>
