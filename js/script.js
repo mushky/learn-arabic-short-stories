@@ -51,9 +51,9 @@ function nextItem() {
     // Scroll down to latest dialog
     let dialogPos = nextDialog.getBoundingClientRect()
 
-    if (dialogPos.bottom > 600) {
-      window.scrollTo(0, dialogPos.bottom - 60)
-    }
+    // if (dialogPos.bottom > 600) {
+    //   window.scrollTo(0, dialogPos.bottom - 60)
+    // }
 
   } else {
     continueButton.innerHTML = "Finished!"
@@ -191,7 +191,11 @@ function mahaWasSoTiredSheDidWhatQuestion() {
 // Handle Popups for translations
 function standardPopup(divId) {
   let popup = document.getElementById(`${divId}`)
-  popup.classList.toggle("show");
+  //popup.classList.toggle("show");
+  popup.classList.add("show")
+  setTimeout(() => {
+    popup.classList.remove("show")
+  },1500)
 }
 
 // Call initialize

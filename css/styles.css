@@ -204,6 +204,12 @@ input[type='radio'] {
   text-decoration: none;
 }
 
+/* Dotted underline used if there are two translatable words in a dialogue */
+.decoration-two {
+  border-bottom: 2px dotted #FF0000;
+  text-decoration: none;
+}
+
 /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
