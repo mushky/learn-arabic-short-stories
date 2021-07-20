@@ -11,6 +11,7 @@ const titleImage = document.getElementById("story-title-image")
 
 dictionaryContainer.style.display = "none"
 
+// Variable to let us know where we are in the dialogue
 let dialogCounter = 0;
 
 // Initialize divs on load
@@ -59,29 +60,39 @@ function nextItem() {
     continueButton.innerHTML = "Finished!"
     continueButton.style.backgroundColor = "red"
   }
+
+  checkForQuestion()
+}
+
+function checkForQuestion() {
   // 4 is where the first question is. TODO: come up with a better system for this.
   if (dialogCounter == 4) {
     continueButton.disabled = true
+    continueButton.style.backgroundColor = "#efefef"
   }
 
   // 7 is where the first question is. TODO: come up with a better system for this.
   if (dialogCounter == 7) {
     continueButton.disabled = true
+    continueButton.style.backgroundColor = "#efefef"
   }
 
   // 9 is where the second question is. TODO: come up with a better system for this.
   if (dialogCounter == 9) {
     continueButton.disabled = true
+    continueButton.style.backgroundColor = "#efefef"
   }
 
   // 14 is where the third question is. TODO: come up with a better system for this.
   if (dialogCounter == 14) {
     continueButton.disabled = true
+    continueButton.style.backgroundColor = "#efefef"
   }
 
   // 20 is where the forth question is. TODO: come up with a better system for this.
   if (dialogCounter == 20) {
     continueButton.disabled = true
+    continueButton.style.backgroundColor = "#efefef"
   }
 }
 
@@ -101,8 +112,10 @@ function awesomeFeedback() {
   let feedback = document.getElementById("feedback-text")
 
   feedback.innerHTML = "! ممتاز"
+
   continueButton.disabled = false
   continueButton.style.display = "none"
+  continueButton.style.backgroundColor = "#58CC02"
 
   bottomArea.style.backgroundColor = "#58CC02";
 

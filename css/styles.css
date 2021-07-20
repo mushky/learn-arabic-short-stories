@@ -41,9 +41,21 @@ a { text-decoration: none; }
 
 /* Progress Bar */
 #progress-bar {
-  width: 100%;
+  width: 98%;
   height: 25px;
   border-radius: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  text-align: center;
+  margin-left: 0.5px;
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 98%;
+  background-color: #ffffff;
+  z-index: 200;
 }
 
 /* Title Section */
