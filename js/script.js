@@ -188,100 +188,10 @@ function mahaWasSoTiredSheDidWhatQuestion() {
   }
 }
 
-// Pop up translations (Right now every translation requires its own function. Luckily they are easy to write.)
-function goodMorningPopup() {
-  let popup = document.getElementById("goodMorningPopup");
+// Handle Popups for translations
+function standardPopup(divId) {
+  let popup = document.getElementById(`${divId}`)
   popup.classList.toggle("show");
-}
-
-function whereAreMyKeysPopup() {
-  let popup = document.getElementById("whereAreMyKeysPopup");
-  popup.classList.toggle("show");
-}
-
-function yourKeysPopup() {
-  let popup = document.getElementById("yourKeysPopup");
-  popup.classList.toggle("show");
-}
-
-function iNeedThemForWorkPopup() {
-  let popup = document.getElementById("iNeedThemForWorkPopup");
-  popup.classList.toggle("show");
-}
-
-function iNeedMyCarKeys() {
-  let popup = document.getElementById("iNeedMyCarKeys");
-  popup.classList.toggle("show");
-}
-
-function youLeftYourKeysOnTheTable() {
-  let popup = document.getElementById("youLeftYourKeysOnTheTable")
-  popup.classList.toggle("show");
-}
-
-function iAmTiredAndWorkTooMuch() {
-  let popup = document.getElementById("iAmTiredAndWorkTooMuch")
-  popup.classList.toggle("show")
-}
-
-function coffee() {
-  let popup = document.getElementById("coffee")
-  popup.classList.toggle("show")
-}
-
-function doYouWant() {
-  let popup = document.getElementById("doYouWant")
-  popup.classList.toggle("show")
-}
-
-function please() {
-  let popup = document.getElementById("please")
-  popup.classList.toggle("show")
-}
-
-function iPut() {
-  let popup = document.getElementById("iPut")
-  popup.classList.toggle("show")
-}
-
-function doYouHave() {
-  let popup = document.getElementById("doYouHave")
-  popup.classList.toggle("show")
-}
-
-function sheDrinks() {
-  let popup = document.getElementById("sheDrinks")
-  popup.classList.toggle("show")
-}
-
-function ohNo() {
-  let popup = document.getElementById("ohNo")
-  popup.classList.toggle("show")
-}
-
-function happened() {
-  let popup = document.getElementById("happened")
-  popup.classList.toggle("show")
-}
-
-function salt() {
-  let popup = document.getElementById("salt")
-  popup.classList.toggle("show")
-}
-
-function very() {
-  let popup = document.getElementById("very")
-  popup.classList.toggle("show")
-}
-
-function sleep() {
-  let popup = document.getElementById("sleep")
-  popup.classList.toggle("show")
-}
-
-function youShould() {
-  let popup = document.getElementById("youShould")
-  popup.classList.toggle("show")
 }
 
 // Call initialize
