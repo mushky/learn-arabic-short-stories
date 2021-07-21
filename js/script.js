@@ -143,7 +143,7 @@ function ouchFeedback() {
 }
 
 function incrementProgressBar() {
-  let amountToIncrement = 100 / arrayOfDialogues.length + 1;
+  let amountToIncrement = 100 / arrayOfDialogues.length;
   progressBar.value += amountToIncrement
 
   if (dialogCounter == arrayOfDialogues.length - 1) {

@@ -137,6 +137,14 @@ a { text-decoration: none; }
   color: black;
 }
 
+.speak-icon {
+  float: left;
+  height: 36px;
+  width: 36px;
+}
+
+.hide { display: none;}
+
 .question-container {
   border-radius: 10px;
   margin-bottom: 10px;
