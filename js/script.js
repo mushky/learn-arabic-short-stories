@@ -16,6 +16,9 @@ let dialogCounter = 0;
 
 // Initialize divs on load
 function initialize() {
+  for (let i = 1; i < arrayOfDialogues.length; i++) {
+    arrayOfDialogues[i].style.visibility = "hidden";
+  }
   dialogContainer.style.display = "none"
 
   let continueButton = document.getElementById("continue");
@@ -31,10 +34,6 @@ function startDialogue() {
   continueButton.style.display = "block"
   dialogContainer.style.display = "block"
 
-  for (let i = 1; i < arrayOfDialogues.length; i++) {
-    arrayOfDialogues[i].style.visibility = "hidden";
-  }
-
   titleImage.style.width = "25%"
   titleImage.style.height = "25%"
 }
@@ -48,7 +47,7 @@ function nextItem() {
 
     let nextDialog = arrayOfDialogues[dialogCounter]
     nextDialog.style.visibility = "visible"
-    
+
     // Scroll down to latest dialog
     let dialogPos = nextDialog.getBoundingClientRect()
 
@@ -123,7 +122,7 @@ function awesomeFeedback() {
     feedback.innerHTML = ""
     continueButton.style.display = "block"
     bottomArea.style.backgroundColor = "#fff";
-  },900)
+  },1000)
 }
 
 function ouchFeedback() {
@@ -139,7 +138,7 @@ function ouchFeedback() {
     feedback.innerHTML = ""
     continueButton.style.display = "block"
     bottomArea.style.backgroundColor = "#fff";
-  },900)
+  },1000)
 }
 
 function incrementProgressBar() {

@@ -115,6 +115,7 @@ a { text-decoration: none; }
   position: relative;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
+  /* animation: loading-fade 1s 1 linear both; */
 }
 
 .dialog-avatar {
@@ -139,8 +140,9 @@ a { text-decoration: none; }
 
 .speak-icon {
   float: left;
-  height: 36px;
-  width: 36px;
+  height: 30px;
+  width: 30px;
+  padding-right: 8px;
 }
 
 .hide { display: none;}
@@ -274,4 +276,13 @@ input[type='radio'] {
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity:1 ;}
+}
+
+.loading.show-loading {
+  animation: loading-fade 1s 1 linear both;
+}
+
+.loading.hide-loading {
+  animation: loading-fade-backwards 1s 1 linear both;   
+  animation-direction: reverse;
 }
