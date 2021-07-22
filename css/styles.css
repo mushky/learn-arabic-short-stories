@@ -115,7 +115,6 @@ a { text-decoration: none; }
   position: relative;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
-  /* animation: loading-fade 1s 1 linear both; */
 }
 
 .dialog-avatar {
@@ -123,6 +122,10 @@ a { text-decoration: none; }
   height: 50px;
   margin-right: 12px;
   width: 50px;
+}
+
+.dialog-avatar:hover, .dialog-avatar.focus {
+  animation: wobble .5s 1
 }
 
 .dialog-box {
@@ -285,4 +288,20 @@ input[type='radio'] {
 .loading.hide-loading {
   animation: loading-fade-backwards 1s 1 linear both;   
   animation-direction: reverse;
+}
+
+/* Animations */
+@keyframes wobble {
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

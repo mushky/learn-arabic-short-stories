@@ -14,6 +14,7 @@
  - Create Pixel Art for Female Speaker [DONE]
  - Mobile Friendly [DONE]
  - Completion of entire dialog [DONE]
+ - Wobble Animations on hover or click [DONE]
  - Web Browser Friendly 
  - Should always scroll to bottom of current dialog
  - Dialog boxes should fade in

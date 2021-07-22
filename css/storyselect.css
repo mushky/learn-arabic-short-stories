@@ -1,0 +1,39 @@
+.story-select-container {
+  text-align: center;
+}
+
+.item {
+  border-radius: 10px;
+  border: solid;
+  border-color: black;
+}
+
+.item-gray {
+  opacity: 0.1;
+  border-radius: 10px;
+  border: solid;
+  border-color: black;
+}
+
+.item-gray:focus, .item:hover {
+  animation: wobble .5s 1;
+}
+
+.item:focus, .item:hover { 
+  animation: wobble .5s 1;
+}
+
+@keyframes wobble {
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
