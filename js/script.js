@@ -210,5 +210,14 @@ function standardPopup(divId) {
   },1500)
 }
 
+
+function speakArabic(text) {
+  let msg = new SpeechSynthesisUtterance();
+  msg.text = text;
+  msg.lang = 'ar-SA';
+  window.speechSynthesis.speak(msg);
+}
+
+
 // Call initialize
 initialize();
