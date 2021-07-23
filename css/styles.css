@@ -148,6 +148,10 @@ a { text-decoration: none; }
   padding-right: 8px;
 }
 
+.coffee-icon {
+  /* animation: wobble .5s 1 */
+}
+
 .hide { display: none;}
 
 .question-container {
