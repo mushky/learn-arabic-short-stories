@@ -225,6 +225,7 @@ input[type='radio'] {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  z-index: 10000000;
 }
 
 /* Dotted underline on translatable words */
@@ -252,7 +253,8 @@ input[type='radio'] {
   z-index: 1;
   bottom: 125%;
   left: 50%;
-  margin-left: -80px; 
+  margin-left: -80px;
+  z-index: 10000000;
 }
 
 /* Popup arrow */
@@ -265,6 +267,7 @@ input[type='radio'] {
   border-width: 5px;
   border-style: solid;
   border-color: #EEE transparent transparent transparent;
+  z-index: 10000000;
 }
 
 /* Toggle this class - hide and show the popup */
@@ -272,6 +275,7 @@ input[type='radio'] {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
+  z-index: 10000000;
 }
 
 /* Add animation (fade in) */
@@ -297,13 +301,13 @@ input[type='radio'] {
 /* Animations */
 @keyframes wobble {
   25% {
-    transform: rotate(2deg);
+    transform: rotate(15deg);
   }
   50% {
-    transform: rotate(-2deg);
+    transform: rotate(-15deg);
   }
   75% {
-    transform: rotate(2deg);
+    transform: rotate(15deg);
   }
   100% {
     transform: rotate(0deg);

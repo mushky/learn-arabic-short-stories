@@ -9,6 +9,7 @@ const bottomArea = document.getElementById("bottom-area")
 const progressBar = document.getElementById("progress-bar")
 const titleImage = document.getElementById("story-title-image")
 
+// Initialize Dictionary to not be displayed on start up
 dictionaryContainer.style.display = "none"
 
 // Variable to let us know where we are in the dialogue
@@ -16,6 +17,7 @@ let dialogCounter = 0;
 
 // Initialize divs on load
 function initialize() {
+
   for (let i = 1; i < arrayOfDialogues.length; i++) {
     arrayOfDialogues[i].style.visibility = "hidden";
   }
@@ -210,9 +212,12 @@ function standardPopup(divId) {
   },1500)
 }
 
+const voices = window.speechSynthesis.getVoices()
+window.speechSynthesis.getVoices()
 
 function speakArabic(text) {
-  let msg = new SpeechSynthesisUtterance();
+  window.speechSynthesis.getVoices()
+  let msg = new SpeechSynthesisUtterance(text);
   msg.text = text;
   msg.lang = 'ar-SA';
   window.speechSynthesis.speak(msg);
