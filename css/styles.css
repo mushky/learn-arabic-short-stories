@@ -95,6 +95,15 @@ a { text-decoration: none; }
   padding-top: 20px;
 }
 
+.intro-image:hover {
+  animation: wobble .5s 1
+}
+
+.intro-image:focus {
+  animation: wobble .5s 1
+}
+
+
 /* Dialog Section */
 #dialog-group {
   height: auto;
