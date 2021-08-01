@@ -17,7 +17,6 @@ let dialogCounter = 0;
 
 // Initialize divs on load
 function initialize() {
-
   for (let i = 1; i < arrayOfDialogues.length; i++) {
     arrayOfDialogues[i].style.visibility = "hidden";
   }
@@ -212,17 +211,4 @@ function standardPopup(divId) {
   },1500)
 }
 
-const voices = window.speechSynthesis.getVoices()
-window.speechSynthesis.getVoices()
-
-function speakArabic(text) {
-  window.speechSynthesis.getVoices()
-  let msg = new SpeechSynthesisUtterance(text);
-  msg.text = text;
-  msg.lang = 'ar-SA';
-  window.speechSynthesis.speak(msg);
-}
-
-
-// Call initialize
 initialize();
