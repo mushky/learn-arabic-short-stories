@@ -3,12 +3,16 @@ let _voices
 const _cache = {}
 
 /**
- * Load Voices. Keep trying until a voice is loaded.
+ * Load Voices. Attempts to load a voice until one is loaded
  */
 
 function loadVoicesWhenAvailable (onComplete = () => {}) {
   _speechSynth = window.speechSynthesis
   const voices = _speechSynth.getVoices()
+
+  for (let i = 0; i < voices.length; i++) {
+    console.log(voices[i])
+  }
 
   if (voices.length !== 0) {
     _voices = voices
@@ -26,6 +30,7 @@ function getVoices (locale) {
   if (!_speechSynth) {
     throw new Error('Browser does not support speech synthesis')
   }
+
   if (_cache[locale]) return _cache[locale]
 
   _cache[locale] = _voices.filter(voice => voice.lang === locale)
@@ -43,7 +48,7 @@ function playByText (locale, text, onEnd) {
   const voices = getVoices(locale)
 
   // TODO load preference here, e.g. male / female etc.
-  // TODO but for now we just use the first occurrence
+  
   const utterance = new window.SpeechSynthesisUtterance()
   utterance.voice = voices[0]
   utterance.pitch = 1
@@ -68,6 +73,6 @@ loadVoicesWhenAvailable(function () {
   console.log("voices loaded") 
 })
 
-function speakArabic (text) {
+function speakArabic (text) { // "ar-SA"
   setTimeout(() => playByText("ar-SA", text), 300)
 }
