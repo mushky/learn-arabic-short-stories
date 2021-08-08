@@ -152,7 +152,6 @@ function incrementProgressBar() {
 }
 
 // Questions
-
 function findKeysQuestion() {
   if (document.getElementById("yes-find-keys").checked) {
     awesomeFeedback();
