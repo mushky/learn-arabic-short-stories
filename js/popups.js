@@ -1,6 +1,8 @@
-/* Handle popups for translations */
+/**
+ * Script to Handle Popups on underlined words
+ */
 
-function standardPopup(divId) {
+const standardPopup = (divId) => {
   let popup = document.getElementById(`${divId}`)
   //popup.classList.toggle("show");
   popup.classList.add("show")

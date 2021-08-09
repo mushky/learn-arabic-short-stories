@@ -1,4 +1,6 @@
-/* Code for Maha Keys Story Lesson */
+/**
+ * Script to handle Mahas Keys Lesson
+ */
 
 const container = document.getElementById("story-container")
 const dictionaryContainer = document.getElementById("dictionary-container")
@@ -16,7 +18,7 @@ dictionaryContainer.style.display = "none"
 let dialogCounter = 0;
 
 // Initialize divs on load
-function initialize() {
+const initialize = () => {
   for (let i = 1; i < arrayOfDialogues.length; i++) {
     arrayOfDialogues[i].style.visibility = "hidden";
   }
@@ -27,7 +29,7 @@ function initialize() {
 }
 
 // Start dialogue
-function startDialogue() {
+const startDialogue = () => {
   let startButton = document.getElementById("start");
   startButton.style.display = "none"
   
@@ -40,7 +42,7 @@ function startDialogue() {
 }
 
 // Move to the next dialog or question
-function nextItem() {
+const nextItem = () => {
   if (dialogCounter <= arrayOfDialogues.length - 2) {
     dialogCounter += 1;
 
@@ -64,7 +66,7 @@ function nextItem() {
   checkForQuestion()
 }
 
-function checkForQuestion() {
+const checkForQuestion = () => {
   // 4 is where the first question is. TODO: come up with a better system for this.
   if (dialogCounter == 4) {
     continueButton.disabled = true
@@ -97,7 +99,7 @@ function checkForQuestion() {
 }
 
 // Dictionary Toggle
-function dictionaryToggle(){
+const dictionaryToggle = () => {
   if (dictionaryContainer.style.display == "none") {
     dictionaryContainer.style.display = "block"
     container.style.display = "none"
@@ -108,7 +110,7 @@ function dictionaryToggle(){
 }
 
 // Functions related to questions.
-function awesomeFeedback() {
+const awesomeFeedback = () => {
   let feedback = document.getElementById("feedback-text")
 
   feedback.innerHTML = "! ممتاز"
@@ -126,7 +128,7 @@ function awesomeFeedback() {
   },1000)
 }
 
-function ouchFeedback() {
+const ouchFeedback = () => {
   let feedback = document.getElementById("feedback-text")
 
   feedback.innerHTML = "! خاطئ"
@@ -142,7 +144,7 @@ function ouchFeedback() {
   },1000)
 }
 
-function incrementProgressBar() {
+const incrementProgressBar = () => {
   let amountToIncrement = 100 / arrayOfDialogues.length;
   progressBar.value += amountToIncrement
 
@@ -152,7 +154,7 @@ function incrementProgressBar() {
 }
 
 // Questions
-function findKeysQuestion() {
+const findKeysQuestion = () => {
   if (document.getElementById("yes-find-keys").checked) {
     awesomeFeedback();
   } else if (document.getElementById("no-find-keys").checked) {
@@ -160,7 +162,7 @@ function findKeysQuestion() {
   }
 }
 
-function whereAreMahasKeysQuestion() {
+const whereAreMahasKeysQuestion = () => {
   if (document.getElementById("on-the-table").checked) {
     awesomeFeedback();
   } else if (document.getElementById("in-her-car").checked) {
@@ -170,7 +172,7 @@ function whereAreMahasKeysQuestion() {
   }
 }
 
-function whichWordMeansTired() {
+const whichWordMeansTired = () => {
   if (document.getElementById("tired").checked) {
     awesomeFeedback();
   } else if (document.getElementById("car").checked) {
@@ -180,7 +182,7 @@ function whichWordMeansTired() {
   }
 }
 
-function whatIsMahaLookingFor() {
+const whatIsMahaLookingFor = () => {
   if (document.getElementById("looking-for-sugar").checked) {
     awesomeFeedback();
   } else if (document.getElementById("complaining-about-something").checked) {
@@ -190,7 +192,7 @@ function whatIsMahaLookingFor() {
   }
 }
 
-function mahaWasSoTiredSheDidWhatQuestion() {
+const mahaWasSoTiredSheDidWhatQuestion = () => {
   if (document.getElementById("put-salt-in-her-coffee").checked) {
     awesomeFeedback();
   } else if (document.getElementById("fell-asleep").checked) {

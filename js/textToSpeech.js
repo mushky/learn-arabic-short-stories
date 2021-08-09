@@ -1,3 +1,7 @@
+/**
+ * Script to Handle Text to Speech using speechSynthesis
+ */
+
 let _speechSynth
 let _voices
 const _cache = {}
@@ -6,7 +10,7 @@ const _cache = {}
  * Load Voices. Attempts to load a voice until one is loaded
  */
 
-function loadVoicesWhenAvailable (onComplete = () => {}) {
+const loadVoicesWhenAvailable = (onComplete = () => {}) => {
   _speechSynth = window.speechSynthesis
   const voices = _speechSynth.getVoices()
 
@@ -14,7 +18,7 @@ function loadVoicesWhenAvailable (onComplete = () => {}) {
     _voices = voices
     onComplete()
   } else {
-    return setTimeout(function () { loadVoicesWhenAvailable(onComplete) }, 100)
+    return setTimeout(() => { loadVoicesWhenAvailable(onComplete) }, 100)
   }
 }
 
@@ -22,7 +26,7 @@ function loadVoicesWhenAvailable (onComplete = () => {}) {
  * Returns the first found voice for a given language code.
  */
 
-function getVoices (locale) {
+const getVoices = (locale) => {
   if (!_speechSynth) {
     throw new Error('Browser does not support speech synthesis')
   }
@@ -40,7 +44,7 @@ function getVoices (locale) {
  * @param onEnd callback if text to speech is finished
  */
 
-function playByText (locale, text, onEnd) {
+const playByText = (locale, text, onEnd) =>{
   const voices = getVoices(locale)
 
   // TODO load preference here, e.g. male / female etc.
@@ -65,10 +69,10 @@ function playByText (locale, text, onEnd) {
 }
 
 // on document ready
-loadVoicesWhenAvailable(function () {
+loadVoicesWhenAvailable(() => {
   console.log("voices loaded") 
 })
 
-function speakArabic (text) { // "ar-SA"
+const speakArabic = (text) => { // "ar-SA"
   setTimeout(() => playByText("ar-SA", text), 300)
 }
