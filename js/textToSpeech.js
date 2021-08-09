@@ -10,10 +10,6 @@ function loadVoicesWhenAvailable (onComplete = () => {}) {
   _speechSynth = window.speechSynthesis
   const voices = _speechSynth.getVoices()
 
-  for (let i = 0; i < voices.length; i++) {
-    console.log(voices[i])
-  }
-
   if (voices.length !== 0) {
     _voices = voices
     onComplete()
