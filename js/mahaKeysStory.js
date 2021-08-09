@@ -66,33 +66,12 @@ const nextItem = () => {
   checkForQuestion()
 }
 
+// While I could add an id to each question html element, it would just add to the unreadability of the html.
 const checkForQuestion = () => {
-  // 4 is where the first question is. TODO: come up with a better system for this.
-  if (dialogCounter == 4) {
-    continueButton.disabled = true
-    continueButton.style.backgroundColor = "#efefef"
-  }
-
-  // 7 is where the first question is. TODO: come up with a better system for this.
-  if (dialogCounter == 7) {
-    continueButton.disabled = true
-    continueButton.style.backgroundColor = "#efefef"
-  }
-
-  // 9 is where the second question is. TODO: come up with a better system for this.
-  if (dialogCounter == 9) {
-    continueButton.disabled = true
-    continueButton.style.backgroundColor = "#efefef"
-  }
-
-  // 14 is where the third question is. TODO: come up with a better system for this.
-  if (dialogCounter == 14) {
-    continueButton.disabled = true
-    continueButton.style.backgroundColor = "#efefef"
-  }
-
-  // 20 is where the forth question is. TODO: come up with a better system for this.
-  if (dialogCounter == 20) {
+  // Questions at 4, 7, 9, 14, and 20
+  if (dialogCounter == 4 || dialogCounter == 7 || dialogCounter == 9 || 
+      dialogCounter == 14 || dialogCounter == 20) 
+  {
     continueButton.disabled = true
     continueButton.style.backgroundColor = "#efefef"
   }
